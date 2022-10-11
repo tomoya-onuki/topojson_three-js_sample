@@ -28,7 +28,7 @@ export class Main {
 
         // レンダラーを作成
         $("#view").append(this.renderer.domElement)
-        this.camera.position.set(0, 100, 100);   // cameraの設定
+        this.camera.position.set(0, 300, 300);   // cameraの設定
 
         // orbit controlsの設定
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -49,7 +49,8 @@ export class Main {
        * topoJSONの読み込み
        * ************************/
         let map: TopoJsonMap = new TopoJsonMap();
-        let url: string = './world_countries_10_1e4.topojson';
+        let url: string = './world_land_10m.topojson';
+        // let url: string = './world_countries_10_1e4.topojson';
         fetch(url)
             .then(response => response.text())
             .then(jsonString => {
